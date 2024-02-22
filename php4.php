@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/55aad314c9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <form action="php4.php" method="get">
+        1 number <input type="text" name="t1"><br>
+        2 number <input type="text" name="t2"><br>
+        <input type="submit" value="Saada">
+    </form>
+
+   
+    <?php
+        /*
+        artur golubevs
+        ülesanne 2
+        01.02.24
+        */
+
+        //ülesanne 2
+        $n1 = isset($_GET['t1']) ? $_GET['t1'] : null;
+        $n2 = isset($_GET['t2']) ? $_GET['t2'] : null;
+
+        if ($n1 == 0 or $n2 == 0){
+            echo 'Üks arvudest on null',"<br>";
+        } else{
+            
+        }
+        if (empty($n1) or empty($n2)){
+            echo "Sisestatud väli on tühi";
+        } else{
+            $j = $n1 / $n2;
+        }
+    ?>
+
+    
+    <form action="php4.php" method="get" >
+        1 kasutaja vanus <input type="text" style="margin-top: 100px;" name="p1"><br>
+        2 kasutaja vanus <input type="text" name="p2"><br>
+        <input type="submit" value="Saada">
+    </form>
+
+    <?php
+        //ülesanne 3
+        $vanus1 = isset($_GET['p1']) ? $_GET['p1'] : null;
+        $vanus2 = isset($_GET['p2']) ? $_GET['p2'] : null;
+
+        if (empty($vanus1) or empty($vanus2)){
+            echo "Sisestatud väli on tühi";
+        } else
+
+        if ($vanus1 > $vanus2){
+            echo "esimene on vanem";
+        } else if($vanus1 == $vanus2){
+            echo "sama vanus";
+        } else if ($vanus1 < $vanus2){
+            echo "teine on vanem";
+        }
+        
+
+    ?>
+    
+    <form action="php4.php" method="get" >
+        1 külg <input type="text" style="margin-top: 100px;" name="s1"><br>
+        2 külg <input type="text" name="s2"><br>
+        3 külg <input type="text" name="s3"><br>
+        4 külg <input type="text" name="s4"><br>
+        <input type="submit" value="Saada">
+    </form>
+
+    <?php
+        //ülesanne 4
+        $kulg1 = isset($_GET['s1']) ? $_GET['s1'] : null;
+        $kulg2 = isset($_GET['s2']) ? $_GET['s2'] : null;
+        $kulg3 = isset($_GET['s3']) ? $_GET['s3'] : null;
+        $kulg4 = isset($_GET['s4']) ? $_GET['s4'] : null;
+
+    
+        if ($kulg1 == $kulg2 and $kulg1 == $kulg3 and $kulg2 == $kulg4 and $kulg3 == $kulg4 and $kulg1 == $kulg4){
+            echo "See on ruut, kõik küljed on võrdsed ";
+        } else{
+            echo "See on ristkülik, kõik küljed ei ole võrdsed";
+        }
+    ?>
+
+
+    <form action="php4.php" method="get" >
+        1 külg <input type="text" style="margin-top: 100px;" name="x1"><br>
+        2 külg <input type="text" name="x2"><br>
+        3 külg <input type="text" name="x3"><br>
+        4 külg <input type="text" name="x4"><br>
+        <input type="submit" value="Saada">
+    </form>
+    <?php
+        //ülesanne 5
+        $st1 = isset($_GET['s1']) ? $_GET['s1'] : null;
+        $st2 = isset($_GET['s2']) ? $_GET['s2'] : null;
+        $st3 = isset($_GET['s3']) ? $_GET['s3'] : null;
+        $st4 = isset($_GET['s4']) ? $_GET['s4'] : null;
+
+        $img = "pildid/pilt.jpg";
+
+        if ($st1 == $st2 and $st1 == $st3 and $st2 == $st4 and $st3 == $st4 and $st1 == $st4){
+            echo '<img src=$img' . $imagePath . '" alt="Pilt">';
+        } else{
+            echo "See on ristkülik, kõik küljed ei ole võrdsed";
+        }
+    ?>
+
+    <form action="php4.php" method="get" >
+        sünniaasta <input type="text" style="margin-top: 100px;" name="xr1"><br>
+        <input type="submit" value="Saada">
+    </form>
+
+    <?php
+    //ülesanne 6
+    $xs1 = isset($_GET['xr1']) ? $_GET['xr1'] : null;
+    
+    ?>
+</body>
+</html>
